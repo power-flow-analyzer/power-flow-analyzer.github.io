@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>PowerFlowAnalyzer</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body class="homepage">
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="..">PowerFlowAnalyzer</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="..">Home</a>
+                            </li>
+                            <li class="active">
+                                <a href="./">Getting Started</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../license.md">License</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="..">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="disabled">
+                                <a rel="prev" >
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#getting-started">Getting Started</a></li>
+            <li><a href="#download-and-start">Download and Start</a></li>
+            <li><a href="#open-an-example-project">Open an example project</a></li>
+            <li><a href="#compute-power-flow-with-matpower">Compute power flow with Matpower</a></li>
+            <li><a href="#load-other-ieee-test-cases">Load other IEEE Test Cases</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="getting-started">Getting Started</h1>
+<hr />
+<h2 id="download-and-start">Download and Start</h2>
+<p>Download the current release from Github and unzip the file. A new folder <code>PowerFlowAnalyzer-&lt;VERSION&gt;</code> will be created. The final name is version dependant (e.g. <code>PowerFlowAnalyzer-2.3.0</code>).</p>
+<p>Open the newly created folder and execute the start script in Matlab:</p>
+<pre><code class="matlab">&gt;&gt; pfa_start_application.m
+</code></pre>
+
+<p>The graphical user interface (GUI) will open in a new window:
+<img src="img/gui_started.png" height="200" /></p>
+<h2 id="open-an-example-project">Open an example project</h2>
+<p>Click the <img alt="open_icon" src="../icons/folder.png" /> button on the toolbar. A new window will open. </p>
+<p>Select or enter the path to the project file <code>&lt;PATH TO PFA&gt;/examples/matpower/matpower.case</code> of your PFA installation. Click <code>OK</code>.</p>
+<p><img alt="matpower_case_loaded" src="img/gui_matpower_case_loaded.PNG" /></p>
+<p>Select the item <code>IEEE 14 Bus Test Case</code> in the <code>Overview</code> area on the left side. The item will be highlighted. A network summary similar to Matpower will be show:</p>
+<p><img src="img/case14_network_summary.PNG" height="150" /></p>
+<p>You can change the name of a network and add a description in the <code>Network information</code> tab:</p>
+<p><img src="img/case14_network_information.PNG" height="150" /></p>
+<p>By double clicking an item in the <code>Overview</code> area, the network will be shown:
+<img alt="case14_opened" src="img/case14_opened.PNG" /></p>
+<p>The user interface offers basically three different visualisation types for network data:</p>
+<ul>
+<li><em>network maps</em> drawing grid topology data and heat maps</li>
+<li><em>network browsers</em> allowing to explore data in a hyperlink like style</li>
+<li><em>data tables</em> listing specific elements and their parameters</li>
+</ul>
+<p>Selecting an item in a visualisation will update all other visualisations to reflect the current selection. </p>
+<h2 id="compute-power-flow-with-matpower">Compute power flow with Matpower</h2>
+<p>Click the <img alt="execute_script" src="../icons/script_gear.png" /> button on the toolbar. A dialog will open and show the available scripts. Click on <code>2. Calculate Power Flow</code>.</p>
+<p><img src="img/gui_select_script.PNG" height="200" /></p>
+<p>The script parameter dialog will show up. Select <code>AC Standard</code> as the power flow algorithm. Click <code>OK</code>.</p>
+<p><img src="img/gui_calc_powerflow.PNG" height="200" /></p>
+<p>This particular script will perform the following actions:</p>
+<ul>
+<li>convert network data into the Matpower case format</li>
+<li>compute power flow using Matpower functions</li>
+<li>convert calculation results into network data</li>
+<li>update user interface</li>
+</ul>
+<p>Take a look at the Matlab console to view the logging output of the PFA and Matpower functions. </p>
+<p><img alt="case14_pf_results_no_selection" src="img/case14_pf_results_no_selection.PNG" /></p>
+<p>Click on one of the red dots in the network viewer to see which constraint was violated:</p>
+<p><img alt="case14_pf_results_select_gen1" src="img/case14_pf_results_select_gen1.PNG" /></p>
+<h2 id="load-other-ieee-test-cases">Load other IEEE Test Cases</h2>
+<p>Switch back to the <code>Overview</code> panel and select the action <code>Create empty network</code>:</p>
+<p><img src="img/gui_select_action_with_selection.PNG" height="120" /></p>
+<p>Now execute the script <code>1. Import Matpower Case</code>:</p>
+<p><img src="img/gui_select_action_or_script.PNG" height="120" /></p>
+<p>The script parameter dialog will show up. Select an input Matpower case (e.g. <code>IEEE 30 Bus Test Case</code>). Click <code>OK</code>.</p>
+<p><img src="img/gui_load_test_case.PNG" height="150" /></p>
+<p>Select the newly created network in the list, change its name and view it by double clicking on it's list item.</p>
+<p><img alt="case30_show_results" src="img/case30_show_results.PNG" /></p>
+<p>Grouping assets by specific models or parameters may reduce significantly the information shown in the user interface. Take a look at the bus section in the <code>Network Overview</code>:</p>
+<p><img src="img/case30_buses.PNG" height="120" /></p>
+<p>Clicking on one of these items will select/highlight the items in this group:</p>
+<p><img alt="case30_show_results_select_area1" src="img/case30_show_results_select_area1.PNG" /></p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.0.4
+Build Date UTC : 2019-04-27 23:00:04
+-->
