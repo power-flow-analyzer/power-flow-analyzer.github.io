@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="img/favicon.ico">
-        <title>PowerFlowAnalyzer</title>
+        <title>Power Flow Analyzer</title>
         <link href="css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
@@ -39,7 +39,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href=".">PowerFlowAnalyzer</a>
+                    <a class="navbar-brand" href=".">Power Flow Analyzer</a>
                 </div>
 
                 <!-- Expanded navigation -->
@@ -94,18 +94,22 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#powerflowanalyzer">PowerFlowAnalyzer</a></li>
+        <li class="main active"><a href="#power-flow-analyzer">Power Flow Analyzer</a></li>
             <li><a href="#features">Features</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#license_1">License</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="powerflowanalyzer">PowerFlowAnalyzer</h1>
+<h1 id="power-flow-analyzer">Power Flow Analyzer</h1>
+<p>Toolbox for power system analysis</p>
 <hr />
-<p>PowerFlowAnalyzer (PFA) is a software tool for visualising and analysing different network topologies along with their data. It was developed at the Technical University Berlin with the main purpose to support actual and future research on small and large scale electrical networks (e.g. transmission and distribution networks in Germany). </p>
-<p>PFA allows to create powerful network diagrams with true geographic coordinates containing error flags, line flows, additional markers and border outlines. Further contour diagrams can be created to visualise trends and patterns in large scale power systems. Its user interface allows to aggregate network elements at multiple levels, such as the operator, region, substation or voltage level.
-Networks and the elements they contain are defined by abstract parameters which are specified in an hierarchical database, allowing to use different sets of parameters for each network. A built-in database for standard Matpower networks is included. </p>
-<p>It interfaces to Matlab and allows to define and execute custom scripts with individual script parameters for e.g. the import of networks from Excel files and the calculation of power flows. </p>
+<p>PowerFlowAnalyzer (PFA) is a toolbox for the analysis of power systems, written in Java and Matlab. Its main focus is the modelling and visualisation of network data for transmission and distribution grids. 
+It interfaces Matlab and Matpower for computations and integrates various data sources (CSV, Excel, UCTE DEF, QGIS). PFA has its roots at the <a href="https://www.tu-berlin.de">Technische Universit&auml;t Berlin</a> and was used in several research projects and student theses relating grid planning and operation topics. </p>
+<p>PFA is free software: you can use it, modify it and redistribute it under the terms of the <a href="license/license/">Apache License, Version 2.0</a>.</p>
+<p>Source code, documentation and build files are available at <a href="https://github.com/power-flow-analyzer">github.com/power-flow-analyzer</a>.</p>
+<hr />
 <h2 id="features">Features</h2>
 <h3 id="core-features">Core Features</h3>
 <ul>
@@ -121,14 +125,14 @@ Networks and the elements they contain are defined by abstract parameters which 
 <li>explore grid characteristics using the network browser</li>
 <li>use heat maps to analyze trends and patterns in large systems</li>
 <li>draw direction of (active) power flow on all lines</li>
-<li>define custom error levels for all grid assets</li>
-<li>aggregate and filter network data at multiple levels</li>
+<li>define custom error levels and their visualisation for all grid assets</li>
+<li>aggregate and filter network data at multiple levels (e.g. operator, region, substation or voltage level)</li>
 </ul>
 <h3 id="interfaces">Interfaces</h3>
 <ul>
-<li>Matlab: execute functions and define parameters graphically; generic interface for all proprietary data formats</li>
+<li>Matlab: generic interface for defining parameters and executing functions graphically</li>
 <li>Matpower: compute (optimal) power flow, PTDFs, LODFs, ...</li>
-<li>Excel: optimised loading routines for easy and fast access</li>
+<li>Excel: optimised loading routines for easy and fast data access</li>
 <li>UCTE DEF: import grid data suitable for grid operators</li>
 </ul>
 <h3 id="runtime-environment">Runtime Environment</h3>
@@ -140,8 +144,27 @@ Networks and the elements they contain are defined by abstract parameters which 
 <h3 id="license">License</h3>
 <ul>
 <li>open source license (Apache Version 2.0), suitable for education, research and enterprises</li>
-<li>the full source code and build files are available for download from Github</li>
-</ul></div>
+<li>the full source code, documentation and build files are available for download from Github</li>
+</ul>
+<hr />
+<h2 id="installation">Installation</h2>
+<p>No installation is required, just download, unzip and start in Matlab.</p>
+<h3 id="download">Download</h3>
+<p>Download a release from the <a href="https://github.com/power-flow-analyzer/PowerFlowAnalyzer/releases">release page</a>
+(e.g. <a href="https://github.com/power-flow-analyzer/PowerFlowAnalyzer/releases/download/2.3.0/PowerFlowAnalyzer-2.3.0.zip">PowerFlowAnalyzer-2.3.0.zip</a>).</p>
+<h3 id="unzip">Unzip</h3>
+<p>Unzip the zip file. A new folder <code>PowerFlowAnalyzer-&lt;VERSION&gt;</code> will be created. The final name is version dependant (e.g. <code>PowerFlowAnalyzer-2.3.0</code>).</p>
+<h3 id="start-in-matlab">Start in Matlab</h3>
+<p>Run <code>pfa_start_application.m</code> in Matlab.</p>
+<hr />
+<h2 id="license_1">License</h2>
+<p>PowerFlowAnalyzer is released under the Apache License, Version 2.0 (see <a href="license/license/">LICENSE file</a>).
+You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0.</p>
+<p>This software includes <a href="http://www.pserc.cornell.edu/matpower">MATPOWER</a> 
+<a href="https://github.com/MATPOWER/matpower" title="MATPOWER on Github">(Github)</a>, 
+<a href="http://miglayout.com">MigLayout</a> <a href="https://github.com/mikaelgrev/miglayout" title="MigLayout on Github">(Github)</a> and <a href="http://www.fatcow.com">Fatcow Hosting Icons</a> 
+<a href="https://github.com/ioBroker/ioBroker.icons-fatcow-hosting" title="Fatcow Hosting Icons on Github">(Github)</a>.
+See <a href="license/notice/">NOTICE file</a> for more information. </p></div>
         </div>
 
         <footer class="col-md-12">
@@ -224,5 +247,5 @@ Networks and the elements they contain are defined by abstract parameters which 
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-04-28 13:10:55
+Build Date UTC : 2019-04-28 20:28:34
 -->
